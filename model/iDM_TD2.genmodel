@@ -4,5 +4,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>iDM_TD2.ecore</foreignModel>
-  <genPackages prefix="IDM_TD2" disposableProviderFactory="true" ecorePackage="iDM_TD2.ecore#/"/>
+  <genPackages prefix="IDM_TD2" disposableProviderFactory="true" ecorePackage="iDM_TD2.ecore#/">
+    <genClasses ecoreClass="iDM_TD2.ecore#//Module"/>
+  </genPackages>
 </genmodel:GenModel>
