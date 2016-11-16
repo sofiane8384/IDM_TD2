@@ -12,7 +12,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Module/NomModule"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/etudiant"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/est_encadre"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Module/TypeEnseignement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Module/TypeEnseignements"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/responsable"/>
     </genClasses>
     <genClasses ecoreClass="iDM_TD2.ecore#//Matser">
