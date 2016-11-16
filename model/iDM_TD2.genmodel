@@ -6,28 +6,47 @@
     importOrganizing="true">
   <foreignModel>iDM_TD2.ecore</foreignModel>
   <genPackages prefix="IDM_TD2" disposableProviderFactory="true" ecorePackage="iDM_TD2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iDM_TD2.ecore#//ENSEIGNEMENT"/>
     <genClasses ecoreClass="iDM_TD2.ecore#//Module">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/semestre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Module/NomModule"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/etudiant"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/Responsable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/est_encadre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Module/TypeEnseignement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/responsable"/>
     </genClasses>
     <genClasses ecoreClass="iDM_TD2.ecore#//Matser">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Matser/Denomination"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Matser/semestre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Matser/responsable"/>
     </genClasses>
     <genClasses ecoreClass="iDM_TD2.ecore#//Semestre">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Semestre/module"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Semestre/matser"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Semestre/Semestre_numero"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Semestre/responsable"/>
     </genClasses>
     <genClasses ecoreClass="iDM_TD2.ecore#//Intervenant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Intervenant/NomIntervenant"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Intervenant/Responsable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Intervenant/Encadre"/>
     </genClasses>
     <genClasses ecoreClass="iDM_TD2.ecore#//Etudiant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Etudiant/NomEtudiant"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Etudiant/module"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Responsable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Responsable/NomResponsable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Responsable/matser"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Responsable/module"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Responsable/semestre"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Salle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Salle/num_salle"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Enseignement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Enseignement/se_donne_dans"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Enseignement/concerne"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Enseignement/date_enseignement"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
