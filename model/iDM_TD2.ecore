@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="iDM_TD2" nsURI="http://www.example.org/iDM_TD2" nsPrefix="iDM_TD2">
-  <eClassifiers xsi:type="ecore:EClass" name="Module"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semestre" lowerBound="1"
+        eType="#//Semestre" eOpposite="#//Semestre/module"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NomModule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="etudiant" upperBound="-1"
+        eType="#//Etudiant" eOpposite="#//Etudiant/module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Responsable" lowerBound="1"
+        eType="#//Intervenant" eOpposite="#//Intervenant/Responsable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Matser">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Denomination" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semestre" upperBound="4"
+        eType="#//Semestre" eOpposite="#//Semestre/matser"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Semestre">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+        upperBound="-1" eType="#//Module" eOpposite="#//Module/semestre"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matser" lowerBound="1"
+        eType="#//Matser" eOpposite="#//Matser/semestre"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Semestre_numero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Intervenant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NomIntervenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Responsable" upperBound="-1"
+        eType="#//Module" eOpposite="#//Module/Responsable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Etudiant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NomEtudiant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+        upperBound="-1" eType="#//Module" eOpposite="#//Module/etudiant"/>
+  </eClassifiers>
 </ecore:EPackage>

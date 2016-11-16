@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/IDM_TD2/src" modelPluginID="IDM_TD2" modelName="IDM_TD2"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/IDM_TD2/src" modelPluginID="IDM_TD2" modelName="IDM_TD2"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    complianceLevel="8.0" copyrightFields="false" language="" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>iDM_TD2.ecore</foreignModel>
   <genPackages prefix="IDM_TD2" disposableProviderFactory="true" ecorePackage="iDM_TD2.ecore#/">
-    <genClasses ecoreClass="iDM_TD2.ecore#//Module"/>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Module">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/semestre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Module/NomModule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/etudiant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Module/Responsable"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Matser">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Matser/Denomination"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Matser/semestre"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Semestre">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Semestre/module"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Semestre/matser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Semestre/Semestre_numero"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Intervenant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Intervenant/NomIntervenant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Intervenant/Responsable"/>
+    </genClasses>
+    <genClasses ecoreClass="iDM_TD2.ecore#//Etudiant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iDM_TD2.ecore#//Etudiant/NomEtudiant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iDM_TD2.ecore#//Etudiant/module"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
